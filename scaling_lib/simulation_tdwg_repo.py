@@ -9,14 +9,11 @@ import torch.fft as fft
 from fft_conv_pytorch import fft_conv, FFTConv2d
 import numpy as np
 from scipy.stats import multivariate_normal
-import tdwg.lib.ftutils_np as ftutils
+import scaling_lib.ftutils_np as ftutils
 import matplotlib.pyplot as plt
-from tdwg.lib.DMD_patterns import generate_fill_factor_mask
-from tdwg.lib.ftutils_torch import fft_centered_ortho, ft_f_axis, ifft_centered_ortho
 import astropy.units as u
 import copy
 from scipy.interpolate import interp1d, interp2d
-from tdwg.lib.DMD_patterns import invert_pattern
 
 class WaveguideSimulationWithBackground():
     def __init__(self, neff, x_axis, z_axis, Ncom=1, fresnel = False):

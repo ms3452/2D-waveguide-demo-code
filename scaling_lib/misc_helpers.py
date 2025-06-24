@@ -1,6 +1,6 @@
 import torch
 import numpy as np
-import tdwg.lib.ftutils_np as ftutils
+import scaling_lib.ftutils_np as ftutils
 
 def unitary_fidelity(U_target: torch.Tensor, U_num_inv: torch.Tensor) -> torch.Tensor:
     """

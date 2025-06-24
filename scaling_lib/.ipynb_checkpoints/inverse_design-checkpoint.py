@@ -2,38 +2,11 @@ from scaling_lib.simulation_tdwg_repo import WaveguideSimulationWithBackground
 import torch.nn as nn
 import torch
 import numpy as np
-import tdwg.lib.pnn_utils as pnn_utils 
+import scaling_lib.pnn_utils as pnn_utils 
 import torch.optim as optim
-from tdwg.lib.misc_utils import timestring
+from scaling_lib.misc_utils import timestring
 
 
-# class TDwgNet(nn.Module):
-#     def __init__(self, wg, delta_n_val, Δn_wg, Evecs, betas, dx):
-#         super(TDwgNet, self).__init__()
-#         device = "cpu"
-#         mod = 0.5*torch.ones([wg.Nz, wg.Nx], requires_grad=True, dtype=torch.float32).to(device)
-#         self.mod = pnn_utils.Parameter(mod, limits=[0.05, 0.95]) #ok this should still be there...
-#         self.Δn_wg = Δn_wg
-#         self.delta_n_val = delta_n_val
-#         self.input_beams = torch.from_numpy(Evecs).to(dtype=torch.complex128)
-#         self.output_modes = torch.from_numpy(Evecs).to(dtype=torch.complex128)*dx
-#         self.wg = wg
-#         self.betas = torch.tensor(betas, dtype=torch.float32)
-
-#     def forward(self, fast_flag=True, ind=0):
-#         mod = self.mod
-#         mod = mod.clip(0, 1)
-#         delta_n = self.delta_n_val*mod + self.Δn_wg
-#         self.wg.set_delta_n(delta_n)
-        
-#         if fast_flag:
-#             output_beams = self.wg.run_simulation(self.input_beams)
-#         else:
-#             output_beams = self.wg.run_simulation_slow(self.input_beams[ind, :])
-        
-#         a_out = output_beams@self.output_modes.T
-#         U = (a_out.T*torch.exp(-1j*self.betas*self.wg.Lz.to("um").value)).T
-#         return U
 class TDwgNet(nn.Module):
     def __init__(self, wg, delta_n_val, background_dn, Evecs, betas, dx, k_cprog, device):
         super(TDwgNet, self).__init__()

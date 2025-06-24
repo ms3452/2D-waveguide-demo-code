@@ -2,9 +2,9 @@ from scaling_lib.simulation_tdwg_repo import WaveguideSimulationWithBackground
 import torch.nn as nn
 import torch
 import numpy as np
-import tdwg.lib.pnn_utils as pnn_utils 
+import scaling_lib.pnn_utils as pnn_utils 
 import torch.optim as optim
-from tdwg.lib.misc_utils import timestring
+from scaling_lib.misc_utils import timestring
 
 
 class TDwgNet(nn.Module):
@@ -65,31 +65,6 @@ def L2(p, q):
     x = torch.abs(p-q)**2
     return x.sum(dim = -1).mean()/2
 
-# def run_training_loop(tdwg_pnn, U_target, iterations, lr, gamma=0.99, print_interval=1):
-#     optimizer = optim.Adam(tdwg_pnn.parameters(), lr=lr)
-#     scheduler = optim.lr_scheduler.ExponentialLR(optimizer, gamma=gamma)
-#     loss_list = []
-
-#     tdwg_pnn.train()
-#     for i in range(iterations):
-#         optimizer.zero_grad()
-#         U_num = tdwg_pnn.forward()
-#         l_objective = L2(U_target, U_num)
-
-#         l_lagrange = pnn_utils.lagrangian(tdwg_pnn, lag_amp = 1, factor = 20)
-#         l = l_objective + l_lagrange 
-#         # l = l_objective
-#         l.backward()
-#         optimizer.step()
-#         scheduler.step()
-#         loss_list.append(l.detach().cpu().data)
-
-#         if i % print_interval == 0:
-#             print(f"Iteration: {i}, Loss: {l.detach().cpu().data:.5f}")
-#         if has_converged(loss_list):
-#             print(f"Converged at iteration: {i}, Loss: {l.detach().cpu().data:.5f}")
-#             break
-#     return loss_list
 def run_training_loop(tdwg_pnn, U_target, iterations, lr, batch_size, device, gamma=0.99, print_interval=1):
     optimizer = optim.Adam(tdwg_pnn.parameters(), lr=lr)
     scheduler = optim.lr_scheduler.ExponentialLR(optimizer, gamma=gamma)
