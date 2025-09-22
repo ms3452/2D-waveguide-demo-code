@@ -54,11 +54,7 @@ Want to see **high-dimensional matrix-vector multiplications** in a multimode wa
 
 Want to use **physics-aware-training** with a mismatched forward- and backward-pass?
 > Notebook 6 contains a minimal inverse-design example with a mismatched forward- and backward-pass, similar to what we used in the optical experiments with the 2D-programmable waveguide.
--->
 
-# How to cite this code
-
-<!--
 ## Notebook 1--Simulating a simple Y-splitter
 
 This notebook contains code that manually sets up a refractive-index distribution of a Y-splitter and simulates beam propagation through it.
