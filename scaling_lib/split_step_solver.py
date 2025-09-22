@@ -11,12 +11,12 @@ class SplitStepSolver():
         self.D_half_step = D_half_step
         self.Ncom = Ncom
     
-    def run_simulation(self, a, N, monitoring = False):
+    def run_simulation(self, a, N, monitor = False):
         """
         Around 2X slower than the fast version for Nz being 1000
         # Characeterize in more detail for other Nz
         """        
-        if monitoring: 
+        if monitor: 
             self.a_list = []
             self.ak_list = []
 
@@ -32,14 +32,14 @@ class SplitStepSolver():
             ak = fft.fft(a)
             ak = D_step * ak
 
-            if monitoring:
+            if monitor:
                 if (z_ind + 1) % self.Ncom == 0:
                     self.a_list.append(a)
                     self.ak_list.append(torch.fft.ifftshift(ak))
         ak = D_half_step.conj() * ak        
         a = fft.ifft(ak)
 
-        if monitoring:
+        if monitor:
             assert len(self.a_list) > 0, "No fields were stored—check Ncom or N length."
             self.Emat_x = torch.stack(self.a_list)
             self.Emat_f = torch.stack(self.ak_list)

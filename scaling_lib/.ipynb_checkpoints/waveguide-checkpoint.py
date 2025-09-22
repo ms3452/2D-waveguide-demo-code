@@ -3,7 +3,7 @@ import torch
 import scaling_lib.ftutils_torch as ftutils
 
 class Waveguide():
-    def __init__(self, neff, x_axis, z_axis, background_delta_n):
+    def __init__(self, neff, x_axis, z_axis, background_delta_n = None, device = 'cpu'):
         #all the units for length are in microns!
         self.n =  neff # effective refractive index for the slab waveguide
         
@@ -26,6 +26,8 @@ class Waveguide():
         self.z2ind = lambda z: int(np.argmin(np.abs(self.z_axis-z)))
         self.zlist2ind = lambda z: int(np.argmin(np.abs(self.z_list-z)))
 
+        if background_delta_n is None:
+            background_delta_n = torch.zeros_like(x_axis)
         if background_delta_n.shape != (self.Nx,):
             raise ValueError('spatial_map has wrong shape, should be [self.Nx,]')
-        self.background_delta_n = background_delta_n
+        self.background_delta_n = background_delta_n.to(device)
