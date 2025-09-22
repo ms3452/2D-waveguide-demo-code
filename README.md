@@ -1,4 +1,4 @@
-Demo-code associated with out paper *[Scaling on-chip photonic neural processors using arbitrarily programmable wave propagation](https://github.com/ms3452/2D-waveguide-demo-code?tab=readme-ov-file#how-to-cite-this-code-1)*.
+Demo-code associated with out paper *Scaling on-chip photonic neural processors using arbitrarily programmable wave propagation*.
 <p align="center">
 <img src="https://github.com/user-attachments/assets/5a1bd570-0beb-4959-837f-6a1d0b965d23" width="800">
 </p>
