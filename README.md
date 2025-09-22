@@ -1,85 +1,33 @@
-Demo-code associated with out paper *Scaling on-chip photonic neural processors using arbitrarily programmable wave propagation*.
+Demo-code associated with our paper *Scaling on-chip photonic neural processors using arbitrarily programmable wave propagation*.
 <p align="center">
 <img src="https://github.com/user-attachments/assets/5a1bd570-0beb-4959-837f-6a1d0b965d23" width="800">
 </p>
 
 # How to get started
 
-<details>
-<summary>Want the <b>simplest possible code</b> to simulate a given refractuve-index pattern on a 2D-programmable waveguide?</summary>
-  
-  > Notebook 1 contains code that manually sets up the refractive-index distribution of a Y-splitter and simulates beam propagation through it.
+<details> <summary><b>Simplest simulation</b> of a refractive-index pattern</summary>
+
+[Notebook 1](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Notebook%201--Simulating%20a%20simple%20Y-splitter.ipynb) provides code that manually defines the refractive-index distribution of a Y-splitter and simulates beam propagation through it.
+
+</details> <details> <summary><b>Inverse design</b> of a refractive-index pattern</summary>
+
+[Notebook 2](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Notebook%202--Minimal%20example%20of%20inverse-design.ipynb) contains a minimal inverse-design example that automatically generates a refractive-index distribution for converting Gaussian beams into Hermite–Gauss modes.
+
+</details> <details> <summary><b>Machine learning demo</b> with MNIST</summary>
+
+[Notebook 3](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Notebook%203--MNIST%20classification.ipynb) demonstrates MNIST image classification using a 2D-programmable waveguide.
+
+</details> <details> <summary><b>High-dimensional MVMs</b> in multimode waveguides</summary>
+
+[Notebook 4](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Notebook%204--Mode%20conversion%20in%20a%20Multimode%20waveguide.ipynb) introduces a step-index multimode waveguide as the background refractive index and demonstrates mode conversion using a manually defined refractive-index distribution.
+[Notebook 5](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Notebook%205--Matrix-vector-multiplication.ipynb) shows how to compute a refractive-index distribution that, when embedded in a multimode waveguide, performs a desired 100×100-dimensional unitary transformation.
+
+</details> <details> <summary><b>Physics-aware training</b> with mismatched forward/backward passes</summary>
+
+[Notebook 6](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Notebook%206--Minimal%20example%20of%20mismatched%20forward-backward%20pass.ipynb) presents a minimal inverse-design example using a mismatched forward and backward pass, similar to the approach used in our optical experiments with the 2D-programmable waveguide.
+
 </details>
 
-<details>
-<summary>Want to <b>inverse-design</b> a refractive-index pattern for a 2D-programmable waveguide?</summary>
-  
-  > Notebook 2 contains a minimal inverse-design example that automatically calculates a refractive-index distribution for a mode converter from Gaussian beams to Hermite-Gauss modes.
-</details>
-
-<details>
-<summary>Want to see a <b>machine-learning task</b> demonstration?</summary>
-  
-  > Notebook 3 walks through MNIST classification with a 2D-programmable waveguide.
-</details>
-
-<details>
-<summary>Want to see <b>high-dimensional matrix-vector multiplications</b> in a multimode waveguide?</summary>
-  
-  > Notebook 4 introduces an additional step-index multimode waveguide as a background refractive index and shows mode conversion in the waveguide with a manually defined refractive-index distribution. Notebook 5 calculates a refractive-index distribution that, embedded in a multimode waveguide, performs a desired 100x100-dimensional unitary transformation.
-</details>
-
-<details>
-<summary>Want to use <b>physics-aware-training</b> with a mismatched forward- and backward-pass?</summary>
-  
-  > Notebook 6 contains a minimal inverse-design example with a mismatched forward- and backward-pass, similar to what we used in the optical experiments with the 2D-programmable waveguide.
-</details>
-
-
-<!--
-Want the **simplest possible code** to simulate a given refractuve-index pattern on a 2D-programmable waveguide? 
-> Notebook 1 contains code that manually sets up the refractive-index distribution of a Y-splitter and simulates beam propagation through it.
-
-Want to **inverse-design** a refractive-index pattern for a 2D-programmable waveguide? 
-> Notebook 2 contains a minimal inverse-design example that automatically calculates a refractive-index distribution for a mode converter from Gaussian beams to Hermite-Gauss modes.
-
-
-Want to see a **machine-learning task** demonstration? 
-> Notebook 3 walks through MNIST classification with a 2D-programmable waveguide.
-
-
-Want to see **high-dimensional matrix-vector multiplications** in a multimode waveguide?
-> Notebook 4 introduces an additional step-index multimode waveguide as a background refractive index and shows mode conversion in the waveguide with a manually defined refractive-index distribution. Notebook 5 calculates a refractive-index distribution that, embedded in a multimode waveguide, performs a desired 100x100-dimensional unitary transformation.
-
-
-Want to use **physics-aware-training** with a mismatched forward- and backward-pass?
-> Notebook 6 contains a minimal inverse-design example with a mismatched forward- and backward-pass, similar to what we used in the optical experiments with the 2D-programmable waveguide.
-
-## Notebook 1--Simulating a simple Y-splitter
-
-This notebook contains code that manually sets up a refractive-index distribution of a Y-splitter and simulates beam propagation through it.
-<img src="https://github.com/user-attachments/assets/2fcf1d2f-ea93-4618-ad84-63733a553a79" width="600">
-
-## Notebook 2--Minimal example of inverse-design
-This notebook contains a minimal inverse-design example that automatically calculates a refractive-index distribution for a mode converter from Gaussian beams to Hermite-Gauss modes.
-
-## Notebook 3--MNIST classification
-This notebook calculates a refractive-index distribution for MNIST classification with a 2D-programmable waveguide.
-<img src="https://github.com/user-attachments/assets/5a1bd570-0beb-4959-837f-6a1d0b965d23" width="900">
-
-## Notebook 4--Mode conversion in a multimode waveguide
-This notebook introduces an additional step-index multimode waveguide as a background refractive index and shows mode conversion in the waveguide with a manually defined refractive-index distribution.
-
-## Notebook 5--Matrix-vector-multiplication in a multimode waveguide
-This notebook calculates a refractive-index distribution that, embedded in a multimode waveguide, performs a desired 100x100-dimensional unitary transformation.
-<img width="700" alt="MVM" src="https://github.com/user-attachments/assets/32735e82-eb4f-470c-8c75-efa1e1427744" />
-
-## Notebook 6--Minimal example of mismatched forward-backward pass
-This notebook contains a minimal inverse-design example with a mismatched forward- and backward-pass, similar to what we used in the optical experiments with the 2D-programmable waveguide.
-
-## What happens under the hood?
-<img width="700" alt="code_overview" src="https://github.com/user-attachments/assets/6b984905-5796-46fd-ba28-911f998324ac" />
--->
 
 # How to cite this code
 
@@ -89,8 +37,8 @@ If you use this code in your research, please consider citing the following pape
 
 # License
 
-The code in this repository is released under the following license:
+This repository is licensed under:
 
 [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/)
 
-A copy of this license is given in this repository as [license.txt](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/license.txt).
+A copy of the license is included in this repository as [license.txt](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/license.txt).
