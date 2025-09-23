@@ -3,7 +3,7 @@ It enables straightforward exploration of 2D-programmable waveguides, i.e. waveg
 The code is intentionally kept minimal, focusing on the essential elements of such devices: 
 - Solving a unidirectional wave equation
 - Using either user-defined or inverse-designed refractive index distributions
-- Implemented with pytorch for GPU support and autodifferentiation
+- Implemented with pytorch for GPU- and autodifferentiation-support
 - Integration with *Physics-Aware-Training* to emulate experiments which are not differentiable
 
 However, it is not a full reference implementation of the code we used in experiment, which may instead be found in the associated [Zenodo](https://doi.org/10.5281/zenodo.10775721).
