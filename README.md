@@ -5,6 +5,7 @@ The code is intentionally kept minimal, focusing on the essential elements of su
 - Using either user-defined or inverse-designed refractive index distributions
 - Implemented with pytorch for GPU support and autodifferentiation
 - Integration with *Physics-Aware-Training* to emulate experiments, which are not differentiable
+
 However, it is not a full reference implementation of the code we used in experiment, which may instead be found in the associated [Zenodo](https://doi.org/10.5281/zenodo.10775721).
 <p align="center">
 <img src="https://github.com/user-attachments/assets/5a1bd570-0beb-4959-837f-6a1d0b965d23" width="800">
