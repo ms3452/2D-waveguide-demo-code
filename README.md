@@ -1,4 +1,11 @@
-Demo-code associated with our paper *Scaling on-chip photonic neural processors using arbitrarily programmable wave propagation*.
+This repository contains demo code associated with our paper *Scaling on-chip photonic neural processors using arbitrarily programmable wave propagation*.
+It enables straightforward exploration of 2D-programmable waveguides, i.e. waveguides whose refractive index distribution $n(x,z)$ can be arbitrarily programmed in space. 
+The code is intentionally kept minimal, focusing on the essential elements of such devices: 
+- Solving a unidirectional wave equation
+- Using either user-defined or inverse-designed refractive index distributions
+- Implemented with pytorch for GPU support and autodifferentiation
+- Integration with *Physics-Aware-Training* to emulate experiments, which are not differentiable
+However, it is not a full reference implementation of the code we used in experiment, which may instead be found in the associated [Zenodo](https://doi.org/10.5281/zenodo.10775721).
 <p align="center">
 <img src="https://github.com/user-attachments/assets/5a1bd570-0beb-4959-837f-6a1d0b965d23" width="800">
 </p>
@@ -7,11 +14,11 @@ Demo-code associated with our paper *Scaling on-chip photonic neural processors 
 
 <details> <summary><b>Simplest simulation</b> of a refractive-index pattern</summary>
 
-[Notebook 1](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Notebook%201--Simulating%20a%20simple%20Y-splitter.ipynb) provides code that manually defines the refractive-index distribution of a Y-splitter and simulates beam propagation through it.
+[Notebook 1](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Notebook%201--Y-splitter.ipynb) provides code that manually defines the refractive-index distribution of a Y-splitter and simulates beam propagation through it.
 
 </details> <details> <summary><b>Inverse design</b> of a refractive-index pattern</summary>
 
-[Notebook 2](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Notebook%202--Minimal%20example%20of%20inverse-design.ipynb) contains a minimal inverse-design example that automatically generates a refractive-index distribution for converting Gaussian beams into Hermite–Gauss modes.
+[Notebook 2](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Notebook%202--Inverse%20design.ipynb) contains a minimal inverse-design example that automatically generates a refractive-index distribution for converting Gaussian beams into Hermite–Gauss modes.
 
 </details> <details> <summary><b>Machine learning demo</b> with MNIST</summary>
 
@@ -19,12 +26,12 @@ Demo-code associated with our paper *Scaling on-chip photonic neural processors 
 
 </details> <details> <summary><b>High-dimensional MVMs</b> in multimode waveguides</summary>
 
-[Notebook 4](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Notebook%204--Mode%20conversion%20in%20a%20Multimode%20waveguide.ipynb) introduces a step-index multimode waveguide as the background refractive index and demonstrates mode conversion using a manually defined refractive-index distribution.
-[Notebook 5](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Notebook%205--Matrix-vector-multiplication.ipynb) shows how to compute a refractive-index distribution that, when embedded in a multimode waveguide, performs a desired 100×100-dimensional unitary transformation.
+[Notebook 4](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Notebook%204--Mode%20conversion%20in%20multimode%20waveguide.ipynb) introduces a step-index multimode waveguide as the background refractive index and demonstrates mode conversion using a manually defined refractive-index distribution.
+[Notebook 5](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Notebook%205--Matrix-vector-multiplication%20in%20multimode%20waveguide.ipynb) shows how to compute a refractive-index distribution that, when embedded in a multimode waveguide, performs a desired 100×100-dimensional unitary transformation.
 
 </details> <details> <summary><b>Physics-aware training</b> with mismatched forward/backward passes</summary>
 
-[Notebook 6](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Notebook%206--Minimal%20example%20of%20mismatched%20forward-backward%20pass.ipynb) presents a minimal inverse-design example using a mismatched forward and backward pass, similar to the approach used in our optical experiments with the 2D-programmable waveguide.
+[Notebook 6](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Notebook%206--Mismatched%20forward-backward%20pass.ipynb) presents a minimal inverse-design example using a mismatched forward and backward pass, similar to the approach used in our optical experiments with the 2D-programmable waveguide.
 
 </details>
 
