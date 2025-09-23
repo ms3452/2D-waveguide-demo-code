@@ -1,0 +1,13 @@
+name: 2Dwg
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - jupyterlab
+  - python==3.12.3
+  - numpy==1.26.4
+  - matplotlib==3.8.4
+  - scipy==1.13.1
+  - pip:
+      - torch==2.5.0 
+      - torchvision==0.20.0 

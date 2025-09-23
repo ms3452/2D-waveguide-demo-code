@@ -70,6 +70,7 @@ def gaussian_beam(
     dtype=torch.complex128,
 ):
     """
+    [ChatGPT-created]
     Fundamental Gaussian beam sampled at longitudinal offset z0 from the waist (focus).
 
     Parameters
@@ -132,6 +133,7 @@ def make_HG_modes(x_axis: torch.Tensor,
                   *,
                   dtype=torch.float64) -> torch.Tensor:
     """
+    [ChatGPT-created]
     Return (n, Nx) tensor of 1D Hermite–Gauss modes centered at x_center with waist w0,
     orthonormal on the *continuous* line (up to discretization error),
     evaluated on x_axis. Output dtype is complex128 (real values cast to complex).
