@@ -50,8 +50,8 @@ This upgrades the environment to use GPU builds of PyTorch and TorchVision. CPU 
 
 </details> <details> <summary><b>High-dimensional MVMs</b> in multimode waveguides</summary>
 
-[Notebook 4](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Notebook%204--Mode%20conversion%20in%20multimode%20waveguide.ipynb) introduces a step-index multimode waveguide as the background refractive index and demonstrates mode conversion using a manually defined refractive-index distribution.
-[Notebook 5](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Notebook%205--Matrix-vector-multiplication%20in%20multimode%20waveguide.ipynb) shows how to compute a refractive-index distribution that, when embedded in a multimode waveguide, performs a desired 100×100-dimensional unitary transformation.
+[Notebook 5](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Notebook%205--Matrix-vector-multiplication%20in%20multimode%20waveguide.ipynb) shows how to compute a refractive-index distribution that, embedded in a multimode waveguide, performs a desired 100×100-dimensional unitary transformation.
+[Notebook 4](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Notebook%204--Mode%20conversion%20in%20multimode%20waveguide.ipynb) contains simpler code that introduces a step-index multimode waveguide as background refractive index and demonstrates mode conversion using a manually defined refractive-index distribution.
 
 </details> <details> <summary><b>Physics-aware training</b> with mismatched forward/backward passes</summary>
 
