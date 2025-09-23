@@ -13,6 +13,8 @@ However, it is not a full reference implementation of the code we used in experi
 
 # How to get started
 
+Each of the following bulletpoints can be clicked for further information:
+
 <details> <summary><b>Simplest simulation</b> of a refractive-index pattern</summary>
 
 [Notebook 1](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Notebook%201--Y-splitter.ipynb) provides code that manually defines the refractive-index distribution of a Y-splitter and simulates beam propagation through it.
