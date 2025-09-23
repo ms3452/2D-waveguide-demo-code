@@ -15,7 +15,17 @@ However, it is not a full reference implementation of the code we used in experi
 
 Each of the following bulletpoints can be clicked for further information:
 
-<details> <summary><b>Simplest simulation</b> of a refractive-index pattern</summary>
+<details> <summary><b>Installing dependencies</b></summary>
+
+Please ensure that the correct versions of all packages specified in 
+[environment.yml](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/environment.yml) are installed. When using anaconda, the easiest way is to download the [environment.yml](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/environment.yml) file and execute
+  `conda env create -f environment.yml`
+in an anaconda prompt in the same folder. This creates an environment called 
+  `2Dwg` 
+with the necessary dependencies. Then activate the environment using
+  `conda activate 2Dwg`.
+
+</details> <details> <summary><b>Simplest simulation</b> of a refractive-index pattern</summary>
 
 [Notebook 1](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Notebook%201--Y-splitter.ipynb) provides code that manually defines the refractive-index distribution of a Y-splitter and simulates beam propagation through it.
 
