@@ -18,12 +18,19 @@ Each of the following bulletpoints can be clicked for further information:
 <details> <summary><b>Installing dependencies</b></summary>
 
 Please ensure that the correct versions of all packages specified in 
-[environment.yml](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/environment.yml) are installed. When using anaconda, the easiest way is to download the [environment.yml](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/environment.yml) file and execute
-  `conda env create -f environment.yml`
-in an anaconda prompt in the same folder. This creates an environment called 
-  `2Dwg` 
-with the necessary dependencies. Then activate the environment using
-  `conda activate 2Dwg`.
+[environment.yml](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/environment.yml) are installed. If using anaconda, the easiest way is to clone the repository, open an anaconda prompt in the repository folder and execute:
+  ```
+  conda env create -f environment.yml
+  conda activate 2Dwg
+  ```
+This creates and activates an environment `2Dwg`.
+To run the code launch Jupyter Lab by executing
+```jupyter lab```
+in the anaconda prompt.
+
+By default, the provided environment.yml installs a CPU-only version of PyTorch. To enable GPU acceleration, first create and activate the environment as described above, then additionally run
+```conda install pytorch-cuda=11.8 -c nvidia -c pytorch```
+This upgrades the environment to use GPU builds of PyTorch and TorchVision. CPU users can ignore this step.
 
 </details> <details> <summary><b>Simplest simulation</b> of a refractive-index pattern</summary>
 
