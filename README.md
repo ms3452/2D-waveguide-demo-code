@@ -71,7 +71,8 @@ This upgrades the environment to use GPU builds of PyTorch and TorchVision. CPU 
 </details> <details> <summary><b>Physics-aware training</b> with mismatched forward/backward passes</summary>
 
 ---
-[Example 6](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Example%206%20Mismatched%20forward-backward%20pass.ipynb) presents a minimal inverse-design example using a mismatched forward and backward pass, similar to the approach used in our optical experiments with the 2D-programmable waveguide.
+[Example 6](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Example%206%20Mismatched%20forward-backward%20pass.ipynb) is a minimal inverse-design notebook using a mismatched forward and backward pass, similar to the approach used in our optical experiments with the 2D-programmable waveguide.
+This notebook can used to *design* an artificial simulation-reality gap and explore whether the training algorithm can succesfully train the programmable waveguide despite the discrepancy.
 
 ---
 
