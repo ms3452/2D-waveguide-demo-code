@@ -1,41 +1,12 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-
-def binarize(tensor, v1, v2):
-    # binarize tensor to values v1 and v2
-    # every element will be rounded to the value that it is closer to
-    tensor = (tensor - v1) / (v2 - v1)
-    tensor = torch.round(tensor)
-    tensor = torch.clamp(tensor, min = 0, max = 1)
-    return (v2 - v1) * tensor + v1
-
-def EMD(p, q):
-    # earth's mover distance between distributions p and q
-    n = p.shape[-1]
-    x = p - q
-    y = torch.cumsum(x, dim=-1)/n
-    return torch.abs(y).sum(dim=-1).mean()*2
-
-def L1(p, q):
-    # L1 distance between p and q
-    x = torch.abs(p-q)
-    return x.sum(dim = -1).mean()/2
+import numpy as np
 
 def L2(p, q):
     # L2 distance between p and q
     x = torch.abs(p-q)**2
     return x.sum(dim = -1).mean()/2
-
-def biasing(tensor, k = 0):
-    # (Eq. 4) from https://arxiv.org/pdf/1709.08809.pdf
-    return 1 / (1-2*k) * (tensor - 1/2) + 1/2
-
-def neighbor_biasing(tensor, k, radius, k_avg, p):
-    # (Eq. 5) from https://arxiv.org/pdf/1709.08809.pdf
-    z_avg = convolve_with_circle(tdwg_pnn.wg, tensor, radius)
-    h = 1/2 + k_avg * (1/2 - z_avg)**(2*p + 1)
-    return 1 / (1-2*k) * (tensor - h) + 1/2
 
 def relu_approx(x, factor=20.0):
     """
@@ -48,7 +19,6 @@ def relu_approx(x, factor=20.0):
         Factor that determines shape of softplus. The larger, the closer to relu, the smaller, the smoother.
     """
     return F.softplus(x*factor)/factor
-
 
 def clamp_lag(x, low=0.0, high=1.0, factor=20.): 
     """
@@ -124,3 +94,25 @@ class Parameter(nn.Parameter):
     
     def __repr__(self):
         return 'Parameter containing:\n' + super(nn.Parameter, self).__repr__() + '\tLimits: ' + str(self.limits)
+        
+def has_converged(loss_list, window=5, std_threshold=0.01):
+    """
+    Check if training has converged based on the standard deviation of recent loss values.
+
+    Args:
+        loss_list (list): List of loss values per epoch.
+        window (int): Number of recent epochs to consider.
+        std_threshold (float): Maximum acceptable standard deviation.
+
+    Returns:
+        bool: True if loss has converged, False otherwise.
+    """
+    if len(loss_list) < window:
+        return False  # Not enough data
+
+    recent_losses = loss_list[-window:]
+    std_dev = np.std(recent_losses)
+    mean = np.mean(recent_losses)
+    std_dev_rel = std_dev / mean
+
+    return std_dev_rel < std_threshold  # Converged if std deviation is very small

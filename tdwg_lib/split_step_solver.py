@@ -1,7 +1,7 @@
 import torch
 import torch.fft as fft
 import numpy as np
-import scaling_lib.ftutils_torch as ftutils
+import tdwg_lib.ftutils_torch as ftutils
 
 class SplitStepSolver():
     def __init__(self, D_step, D_half_step = None, Ncom = 1):

@@ -1,6 +1,6 @@
 from scipy.linalg import circulant
 from scipy.sparse.linalg import eigs, eigsh, LinearOperator
-import scaling_lib.ftutils_np as ftutils
+import tdwg_lib.ftutils_np as ftutils
 import numpy as np
 import scipy
 
