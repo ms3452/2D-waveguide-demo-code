@@ -16,7 +16,8 @@ However, it is not a full reference implementation of the code we used in experi
 Each of the following bulletpoints can be clicked for further information:
 
 <details> <summary><b>Installing dependencies</b></summary>
-
+  
+---
 Please ensure that the correct versions of all packages specified in 
 [environment.yml](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/environment.yml) are installed. If using anaconda, the easiest way is to clone the repository, open an anaconda prompt in the repository folder, and execute:
   ```
@@ -36,26 +37,43 @@ conda install pytorch-cuda=11.8 -c nvidia -c pytorch
 ```
 This upgrades the environment to use GPU builds of PyTorch and TorchVision. CPU users can ignore this step.
 
+---
+
 </details> <details> <summary><b>Simplest simulation</b> of a refractive-index pattern</summary>
 
-[Notebook 1](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Notebook%201--Y-splitter.ipynb) provides code that manually defines the refractive-index distribution of a Y-splitter and simulates beam propagation through it.
+---
+[Example 1](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Example%201%20Y-splitter.ipynb) provides code that manually defines the refractive-index distribution of a Y-splitter and simulates beam propagation through it.
+
+---
 
 </details> <details> <summary><b>Inverse design</b> of a refractive-index pattern</summary>
 
-[Notebook 2](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Notebook%202--Inverse%20design.ipynb) contains a minimal inverse-design example that automatically generates a refractive-index distribution for converting Gaussian beams into Hermite–Gauss modes.
+---
+[Example 2](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Example%202%20Inverse%20design.ipynb) contains a minimal inverse-design example that automatically generates a refractive-index distribution for converting Gaussian beams into Hermite–Gauss modes.
+
+---
 
 </details> <details> <summary><b>Machine learning demo</b> with MNIST</summary>
 
-[Notebook 3](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Notebook%203--MNIST%20classification.ipynb) demonstrates MNIST image classification using a 2D-programmable waveguide.
+---
+[Example 3](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Example%203%20MNIST%20classification.ipynb) demonstrates MNIST image classification using a 2D-programmable waveguide.
+
+---
 
 </details> <details> <summary><b>High-dimensional MVMs</b> in multimode waveguides</summary>
 
-[Notebook 5](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Notebook%205--Matrix-vector-multiplication%20in%20multimode%20waveguide.ipynb) shows how to compute a refractive-index distribution that, embedded in a multimode waveguide, performs a desired 100×100-dimensional unitary transformation.
-[Notebook 4](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Notebook%204--Mode%20conversion%20in%20multimode%20waveguide.ipynb) contains simpler code that introduces a step-index multimode waveguide as background refractive index and demonstrates mode conversion using a manually defined refractive-index distribution.
+---
+[Example 5](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Example%205%20Matrix-vector-multiplication%20in%20multimode%20waveguide.ipynb) shows how to compute a refractive-index distribution that, embedded in a multimode waveguide, performs a desired 100×100-dimensional unitary transformation.
+[Example 4](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Example%204%20Mode%20conversion%20in%20multimode%20waveguide.ipynb) contains simpler code that introduces a step-index multimode waveguide as background refractive index and demonstrates mode conversion using a manually defined refractive-index distribution.
+
+---
 
 </details> <details> <summary><b>Physics-aware training</b> with mismatched forward/backward passes</summary>
 
-[Notebook 6](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Notebook%206--Mismatched%20forward-backward%20pass.ipynb) presents a minimal inverse-design example using a mismatched forward and backward pass, similar to the approach used in our optical experiments with the 2D-programmable waveguide.
+---
+[Example 6](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Example%206%20Mismatched%20forward-backward%20pass.ipynb) presents a minimal inverse-design example using a mismatched forward and backward pass, similar to the approach used in our optical experiments with the 2D-programmable waveguide.
+
+---
 
 </details>
 
