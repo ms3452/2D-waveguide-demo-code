@@ -24,7 +24,7 @@ Please ensure that the correct versions of all packages specified in
   conda env create -f environment.yml
   conda activate 2Dwg
   ```
-This creates and activates an environment `2Dwg`.
+This creates and activates an environment called `2Dwg`.
 To run the code, launch Jupyter Lab by executing
 ```
 jupyter lab
