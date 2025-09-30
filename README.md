@@ -19,7 +19,7 @@ Each of the following bulletpoints can be clicked for further information:
   
 ---
 Please ensure that the correct versions of all packages specified in 
-[environment.yml](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/environment.yml) are installed. If using anaconda, the easiest way is to clone the repository, open an anaconda prompt in the repository folder, and execute:
+[environment.yml](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/environment.yml) are installed. If using anaconda, the easiest way to do so is to clone the repository, open an anaconda prompt in the repository folder, and execute:
   ```
   conda env create -f environment.yml
   conda activate 2Dwg
