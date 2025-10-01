@@ -3,7 +3,7 @@ It enables straightforward exploration of 2D-programmable waveguides, i.e. waveg
 The code is intentionally kept minimal, focusing on the essential elements of such devices: 
 - Solving a unidirectional wave equation
 - Using either user-defined or inverse-designed refractive index distributions
-- Implemented in *PyTorch* for GPU- and autodifferentiation-support
+- Implemented in *PyTorch* for GPU- and auto-differentiation-support
 - Integration with *Physics-Aware-Training* to emulate experiments which are not differentiable
 
 However, it is not a full reference implementation of the code we used in experiment, which may instead be found in the associated [Zenodo](https://doi.org/10.5281/zenodo.10775721).
@@ -42,21 +42,21 @@ This upgrades the environment to use GPU builds of PyTorch and TorchVision. CPU 
 </details> <details> <summary><b>Simplest simulation</b> of a refractive-index pattern</summary>
 
 ---
-[Example 1](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Example%201%20Y-splitter.ipynb) provides code that manually defines the refractive-index distribution of a Y-splitter and simulates beam propagation through it.
+[Example 1](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Example%201%20Y-splitter.ipynb) provides code that manually defines the refractive-index distribution of a Y-splitter and simulates beam propagation through it. Parameters of this simulation are similar to the experimental results from Fig. 2 of our paper.
 
 ---
 
 </details> <details> <summary><b>Inverse design</b> of a refractive-index pattern</summary>
 
 ---
-[Example 2](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Example%202%20Inverse%20design.ipynb) contains a minimal inverse-design example that automatically generates a refractive-index distribution for converting Gaussian beams into Hermite–Gauss modes.
+[Example 2](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Example%202%20Inverse%20design.ipynb) contains a minimal inverse-design example that automatically generates a refractive-index distribution for converting Gaussian beams into Hermite–Gauss modes. Inverse-design is performed via the auto-differentiable simulation of the programmable waveguide with *PyTorch*.
 
 ---
 
 </details> <details> <summary><b>Machine learning demo</b> with MNIST</summary>
 
 ---
-[Example 3](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Example%203%20MNIST%20classification.ipynb) demonstrates MNIST image classification using a 2D-programmable waveguide.
+[Example 3](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Example%203%20MNIST%20classification.ipynb) demonstrates MNIST image classification using a 2D-programmable waveguide. Parameters of this simulation are similar to experimental results from Fig. 4 of our paper.
 
 ---
 
@@ -65,6 +65,7 @@ This upgrades the environment to use GPU builds of PyTorch and TorchVision. CPU 
 ---
 [Example 5](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Example%205%20Matrix-vector-multiplication%20in%20multimode%20waveguide.ipynb) shows how to compute a refractive-index distribution that, embedded in a multimode waveguide, performs a desired 100×100-dimensional unitary transformation.
 [Example 4](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Example%204%20Mode%20conversion%20in%20multimode%20waveguide.ipynb) contains simpler code that introduces a step-index multimode waveguide as background refractive index and demonstrates mode conversion using a manually defined refractive-index distribution.
+These notebooks can be readily adapted to replicate the results presented in Fig. 5 of our paper.
 
 ---
 
