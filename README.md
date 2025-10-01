@@ -42,7 +42,7 @@ This upgrades the environment to use GPU builds of PyTorch and TorchVision. CPU 
 </details> <details> <summary><b>Simplest simulation</b> of a refractive-index pattern</summary>
 
 ---
-[Example 1](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Example%201%20Y-splitter.ipynb) provides code that manually defines the refractive-index distribution of a Y-splitter and simulates beam propagation through it. Parameters of this simulation are similar to the experimental results from Fig. 2 of our paper.
+[Example 1](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Example%201%20Y-splitter.ipynb) provides code that manually defines the refractive-index distribution of a Y-splitter and simulates beam propagation through it. Parameters of this simulation are similar to the experimental results presented in Fig. 2 of our paper.
 
 ---
 
@@ -56,7 +56,7 @@ This upgrades the environment to use GPU builds of PyTorch and TorchVision. CPU 
 </details> <details> <summary><b>Machine learning demo</b> with MNIST</summary>
 
 ---
-[Example 3](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Example%203%20MNIST%20classification.ipynb) demonstrates MNIST image classification using a 2D-programmable waveguide. Parameters of this simulation are similar to experimental results from Fig. 4 of our paper.
+[Example 3](https://github.com/ms3452/2D-waveguide-demo-code/blob/main/Example%203%20MNIST%20classification.ipynb) demonstrates MNIST image classification using a 2D-programmable waveguide. Parameters of this simulation are similar to experimental results presented in Fig. 4 of our paper.
 
 ---
 
