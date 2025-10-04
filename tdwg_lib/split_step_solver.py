@@ -95,7 +95,7 @@ class BPMSplitStepSolver(SplitStepSolver):
         device = a.device
         delta_n = delta_n.to(device)
         k0 = self.k0
-        dz = self.dz.to(device=device).to(dtype=delta_n.dtype)
+        dz = torch.tensor(self.dz, device=device, dtype=delta_n.dtype)
 
         # Compute nonlinear operator: N[z, x] = exp(i k0 delta_n dz)
         phase = 1j * k0 * delta_n * dz
