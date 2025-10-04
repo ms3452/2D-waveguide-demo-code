@@ -1,6 +1,12 @@
-import torch
+"""
+Physics-Aware Training (PAT) utilities.
 
-#this code is used to construct the custom autograd function for PAT
+This module provides custom PyTorch autograd functions for physics-aware training,
+enabling gradient propagation through physical systems or simulations with separate
+forward and backward functions.
+"""
+
+import torch
 def make_pat_func(f_forward, f_backward):
     """
     A function that constructs and returns the custom autograd function for physics−aware training.

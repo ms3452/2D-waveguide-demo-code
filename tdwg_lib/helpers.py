@@ -1,3 +1,11 @@
+"""
+Helper utilities for 2D waveguide simulations.
+
+This module provides:
+- Gaussian smoothing filters for 1D and 2D tensors in Fourier space
+- Timestamp generation utilities
+"""
+
 import torch
 import time
 import numpy as np

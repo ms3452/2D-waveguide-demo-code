@@ -1,3 +1,14 @@
+"""
+Split-step Fourier method solver for wave propagation.
+
+This module provides split-step solvers for simulating wave propagation in 2D waveguides:
+- Generic split-step solver with user-defined Fourier and real-space operators
+- Beam Propagation Method (BPM) solver inherited from the generic split-step solver
+- Can store or not store internal fields for propagation visualization or memory-efficiency, respectively
+
+Uses PyTorch for GPU-accelerated computations.
+"""
+
 import torch
 import torch.fft as fft
 import numpy as np
@@ -12,10 +23,6 @@ class SplitStepSolver():
         self.Ncom = Ncom
     
     def run_simulation(self, a, N, monitor = False):
-        """
-        Around 2X slower than the fast version for Nz being 1000
-        # Characeterize in more detail for other Nz
-        """        
         if monitor: 
             self.a_list = []
             self.ak_list = []
@@ -87,8 +94,8 @@ class BPMSplitStepSolver(SplitStepSolver):
         """
         device = a.device
         delta_n = delta_n.to(device)
-        k0 = torch.tensor(self.k0, device=device, dtype=delta_n.dtype)
-        dz = torch.tensor(self.dz, device=device, dtype=delta_n.dtype)
+        k0 = self.k0
+        dz = self.dz.to(device=device).to(dtype=delta_n.dtype)
 
         # Compute nonlinear operator: N[z, x] = exp(i k0 delta_n dz)
         phase = 1j * k0 * delta_n * dz

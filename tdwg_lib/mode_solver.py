@@ -1,3 +1,14 @@
+"""
+Eigenmode solver for 2D waveguides.
+
+This module solves for propagating modes in graded-index waveguides using:
+- FFT-based differential operators for efficient computation
+- Sparse eigenvalue solver for mode extraction
+- Support for both paraxial (Fresnel) and non-paraxial formulations
+
+Uses NumPy and SciPy for numerical computations.
+"""
+
 from scipy.linalg import circulant
 from scipy.sparse.linalg import eigs, eigsh, LinearOperator
 import tdwg_lib.ftutils_np as ftutils

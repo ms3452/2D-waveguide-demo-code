@@ -1,3 +1,11 @@
+"""
+Waveguide configuration and utilities.
+
+This module provides:
+- Waveguide class as a container for storing simulation geometry and parameters
+- Absorbing boundary conditions (PML-like) for suppressing reflections
+"""
+
 import numpy as np
 import torch
 import tdwg_lib.ftutils_torch as ftutils

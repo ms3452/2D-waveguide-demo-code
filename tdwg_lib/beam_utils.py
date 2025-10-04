@@ -1,3 +1,15 @@
+"""
+Beam and mode generation utilities for 2D waveguide simulations.
+
+This module provides functions for creating optical field distributions:
+- Gaussian beams with configurable waist, position, and phase
+- Hermite-Gauss (HG) mode sets using stable recurrence relations
+- Boxed (piecewise-constant) modes emulating bucket detectors
+
+All functions support PyTorch tensors and GPU acceleration, with automatic
+discrete L2 normalization.
+"""
+
 import torch
 import math 
 

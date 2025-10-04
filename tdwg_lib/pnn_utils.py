@@ -1,3 +1,15 @@
+"""
+Physics-informed Neural Network (PNN) utilities.
+
+This module provides tools for training neural networks with physical constraints:
+- Parameter class with enforced bounds
+- Lagrangian penalty functions for constraint enforcement
+- Loss functions and convergence detection
+- Rescaled soft-ReLU/softplus function implementation
+
+Uses PyTorch for neural network operations.
+"""
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F

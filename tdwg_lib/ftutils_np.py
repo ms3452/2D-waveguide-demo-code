@@ -1,3 +1,15 @@
+"""
+Fourier transform utilities using NumPy.
+
+This module provides centered and normalized FFT variants for 1D and 2D transforms:
+- Centered transforms: DC component at array center (using fftshift)
+- Isometric transforms: preserve integrals (physical units)
+- Orthogonal transforms: preserve L2 norm (unitary)
+- Frequency axes: asymmetric with DC at zero (not symmetric about zero)
+
+All functions use NumPy's FFT implementation.
+"""
+
 import numpy.fft as fft
 
 def ft_t_axis(N, dt):
