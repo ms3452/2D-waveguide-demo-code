@@ -16,10 +16,40 @@ import numpy as np
 import scipy
 
 def solve_modes(x_axis, n_ref, k0, dn, Nmodes, verbose = True, fresnel = False):
+    """
+    Solve for propagating modes in a graded-index waveguide using eigenmode decomposition.
+
+    Uses FFT-based differential operators and sparse eigenvalue solver to find the
+    highest-effective-index modes. Supports both paraxial (Fresnel) and non-paraxial formulations.
+
+    Inputs:
+    -------
+    x_axis : numpy.ndarray, shape (Nx,)
+        Transverse coordinate grid (must be uniformly spaced).
+    n_ref : float
+        Reference refractive index (typically effective index of slab mode).
+    k0 : float
+        Free-space wavenumber (2π/λ₀) in inverse length units.
+    dn : numpy.ndarray, shape (Nx,)
+        Refractive index modulation profile (complex array; imaginary part represents loss/gain).
+    Nmodes : int
+        Number of modes to solve for (highest effective index modes).
+    verbose : bool, default True
+        If True, print warning when unbound/leaky modes are found.
+    fresnel : bool, default False
+        If True, use paraxial (Fresnel) approximation; if False, use full scalar wave equation.
+
+    Returns:
+    --------
+    eigenval : numpy.ndarray, shape (Nmodes,)
+        Real-valued propagation constants (beta values) of the modes in ascending order.
+    eigenvec : numpy.ndarray, shape (Nmodes, Nx)
+        Real-valued mode profiles normalized to discrete L2 norm, each row is one mode.
+    """
     Nx = len(x_axis)
     dx = x_axis[1] - x_axis[0]
     kx_axis = 2*np.pi * ftutils.ft_f_axis(Nx, dx).astype(complex)  # frequency axis
-    
+
     def wave_eq_operator_action(u):
         # u is a vector of shape (Nx,)
         u_hat = ftutils.fft_centered(u)

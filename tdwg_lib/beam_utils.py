@@ -162,7 +162,29 @@ def make_HG_modes(x_axis: torch.Tensor,
     return modes
 
 def make_boxed_modes(x_axis, N, xmode_out_lim, separation = 0):
-    x2ind = lambda x: torch.argmin(torch.abs(x_axis-x)) 
+    """
+    Generate N boxed (piecewise-constant) modes emulating bucket detectors.
+
+    Creates N rectangular modes evenly distributed across the transverse axis,
+    useful for modeling discrete detector arrays or spatial mode projections.
+
+    Inputs:
+    -------
+    x_axis : torch.Tensor, shape (Nx,)
+        Transverse coordinate grid.
+    N : int
+        Number of boxed modes to generate.
+    xmode_out_lim : float
+        Half-width of the region containing all modes (modes span from -xmode_out_lim to +xmode_out_lim).
+    separation : float, default 0
+        Gap between adjacent modes in same units as x_axis.
+
+    Returns:
+    --------
+    output_modes : torch.Tensor, shape (N, Nx)
+        Array of N boxed modes, each row is a piecewise-constant mode with value 1 in its region, 0 elsewhere.
+    """
+    x2ind = lambda x: torch.argmin(torch.abs(x_axis-x))
     out_xsep_list = torch.linspace(-xmode_out_lim, xmode_out_lim, N+1)
     output_modes = []
     for i in range(N):
